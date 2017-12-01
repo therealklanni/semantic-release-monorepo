@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"No test specified\" && exit 0"
   },
-  "bin": "./bin/semantic-release-monorepo",
+  "bin": "./bin/semantic-release-monorepo.js",
   "license": "MIT",
   "peerDependencies": {
     "semantic-release": "^11.0.0"

@@ -3,10 +3,9 @@ const execa = require('execa');
 const { argv } = process;
 const args = argv.slice(2);
 
-async function run() {
-  const { stdout } = execa('semantic-release', args, { stdio: 'inherit' });
-  stdout.pipe(process.stdout);
-}
+const args2 = args.concat([
+  '--generate-notes=semantic-release-monorepo',
+  `--analyze-commits='[{ path: 'semantic-release-monorepo' }]`
+]);
 
-run();
-
+execa('semantic-release', args2, { stdio: 'inherit' });
